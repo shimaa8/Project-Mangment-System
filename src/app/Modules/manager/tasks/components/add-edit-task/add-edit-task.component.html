@@ -1,0 +1,66 @@
+<section>
+
+    <div class="title-page shadow px-5 ">
+        <div>
+            <a class="text-decoration-none text-dark" routerLink="/dashboard/manager/tasks"><span><i
+                        class="fa-solid fa-angle-left"></i></span> View All Tasks</a>
+            <h3>
+                Add a New Task
+            </h3>
+
+        </div>
+
+
+
+    </div>
+
+    <div class="card-form w-75 mx-auto my-3 shadow-sm ">
+        <form [formGroup]="taskForm" (ngSubmit)="onSubmit(taskForm)">
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <input formControlName="title" type="text" class="form-control rounded rounded-4"
+                    id="exampleFormControlInput1" placeholder="name">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput2" class="form-label">Descripation</label>
+                <textarea formControlName="description" type="text" class="form-control rounded rounded-4"
+                    id="exampleFormControlInput2" placeholder="Descripation"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <mat-form-field class="w-100" >
+                            <mat-label>Users</mat-label>
+                            <mat-select formControlName="employeeId" >
+        
+                                <mat-option *ngFor="let item of users" [value]="item.id">{{item.userName}}</mat-option>
+        
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <mat-form-field  class="w-100">
+                            <mat-label>Projects</mat-label>
+                            <mat-select formControlName="projectId" >
+        
+                                <mat-option *ngFor="let item of projects" [value]="item.id">{{item.title}}</mat-option>
+        
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="mt-5">
+            <div class="d-flex justify-content-between">
+                <button type="button" class="main-outline w-25" routerLink="../">Cancel</button>
+                <button class="main w-25">Save</button>
+            </div>
+        </form>
+
+    </div>
+</section>

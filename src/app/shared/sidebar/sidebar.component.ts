@@ -37,7 +37,7 @@ export class SidebarComponent {
     },
     {
       text: 'users',
-      link: '/dashboard/admin/users',
+      link: '/dashboard/manager/users',
       icon: 'fa-solid fa-house',
       isActive: this.isAdmin()
     },
@@ -50,20 +50,20 @@ export class SidebarComponent {
     ,
     {
       text: 'Tasks',
-      link: '/dashboard/admin/category',
+      link: '/dashboard/manager/tasks',
       icon: 'fa-solid fa-house',
       isActive: this.isAdmin()
     }
     ,
     {
-      text: 'Employee Projects',
-      link: '/dashboard/user/recipes',
+      text: 'Projects',
+      link: '/dashboard/employee/projects',
       icon: 'fa-solid fa-house',
       isActive: this.isUser()
     },
     {
       text: 'Task Board',
-      link: '/dashboard/user/favorites',
+      link: '/dashboard/employee/task-board',
       icon: 'fa-solid fa-house',
       isActive: this.isUser()
     }

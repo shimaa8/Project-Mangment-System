@@ -10,15 +10,17 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+import { MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   imports: [
     CommonModule,
     MatFormFieldModule, MatInputModule, ReactiveFormsModule, RouterModule,
-    MatButtonModule, MatMenuModule, MatIconModule
+    MatButtonModule, MatMenuModule, MatIconModule,MatSelectModule,MatDialogModule
   ],
   exports: [
     MatFormFieldModule, MatInputModule, ReactiveFormsModule
-    , SidebarComponent, NavbarComponent, RouterModule, MatButtonModule, MatMenuModule, MatIconModule
+    , SidebarComponent, NavbarComponent, RouterModule, MatButtonModule, MatMenuModule, MatIconModule,MatSelectModule,MatDialogModule
   ],
   declarations: [SharedComponent, SidebarComponent, NavbarComponent]
 })

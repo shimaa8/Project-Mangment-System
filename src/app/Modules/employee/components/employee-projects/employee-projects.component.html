@@ -1,0 +1,38 @@
+<section>
+
+    <div class="title-page shadow px-5 ">
+
+        <h3>Projects</h3>
+
+    </div>
+
+    <div class="table-container mt-5 mx-5 ">
+        <div class="w-25 px-3">
+            <input type="text" placeholder="Search By Title" class="form-control rounded rounded-5" name="" id="">
+        </div>
+        <table class="table   my-3">
+
+            <thead>
+                <th>title</th>
+                <th>Num Tasks</th>
+                <th>description</th>
+                <th>Created At</th>
+                <th>Modification Date</th>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of projects;let isEven=even" [class]="isEven?'bg-white':'bg-secondary-subtle'">
+
+                    <td>{{item.title}}</td>
+                    <td>{{item.task.length}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.creationDate|date:'dd/MM/yyy'}}</td>
+                    <td>{{item.modificationDate|date:'dd/MM/yyy'}}</td>
+
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</section>

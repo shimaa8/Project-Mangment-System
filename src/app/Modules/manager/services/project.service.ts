@@ -17,4 +17,8 @@ export class ProjectService {
   onAddProject(data: FormGroup): Observable<any> {
     return this._HttpClient.post('Project', data)
   }
+  getManagerProjects(): Observable<any> {
+    return this._HttpClient.get('Project/manager', { params: { pageSize: 10000, PageNumber: 1 } })
+  }
+
 }

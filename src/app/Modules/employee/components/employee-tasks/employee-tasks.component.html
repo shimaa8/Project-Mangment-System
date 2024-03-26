@@ -1,0 +1,96 @@
+<section>
+
+    <div class="title-page shadow px-5 ">
+
+        <h3>Task Board</h3>
+
+    </div>
+
+   
+    <section>
+    
+        <div cdkDropListGroup>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="example-container" id="todo">
+                            <h2>To do</h2>
+    
+                            <div cdkDropList [cdkDropListData]="todo" class="example-list task"
+                                (cdkDropListDropped)="drop($event)">
+                                <div class="example-box task-item" cdkDrag *ngFor="let item of todo">{{item.title}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="example-container" id="inprogress">
+                            <h2>In Progress</h2>
+    
+                            <div cdkDropList [cdkDropListData]="inProgress" class="example-list task"
+                                (cdkDropListDropped)="drop($event)">
+                                <div class="example-box task-item" *ngFor="let item of inProgress" cdkDrag>{{item.title}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="example-container" id="done">
+                            <h2>Done</h2>
+    
+                            <div cdkDropList [cdkDropListData]="done" class="example-list task"
+                                (cdkDropListDropped)="drop($event)">
+                                <div class="example-box task-item" *ngFor="let item of done" cdkDrag>{{item.title}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+    
+        </div>
+    
+    </section>
+</section>
+
+
+
+<!-- <section>
+
+    <div class="container-fluid">
+        <div class="row py-5">
+            <div class="col-4">
+                <h2>Todo</h2>
+
+                <div class="task">
+                    <div class="task-item" *ngFor="let item of todo">
+                        <span>{{item.title}}</span>
+                        <span><i class="fa-solid fa-edit"></i></span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-4">
+                <h2>InProgress</h2>
+                <div class="task">
+                    <div class="task-item" *ngFor="let item of inProgress">
+                        <span>{{item.title}}</span>
+                        <span><i class="fa-solid fa-edit"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <h2>Done</h2>
+                <div class="task">
+                    <div class="task-item" *ngFor="let item of done">
+                        <span>{{item.title}}</span>
+                        <span><i class="fa-solid fa-edit"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section> -->
