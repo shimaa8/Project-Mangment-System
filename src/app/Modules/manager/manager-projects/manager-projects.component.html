@@ -1,0 +1,61 @@
+<section>
+
+    <div class="title-page shadow px-5 ">
+
+        <h3>Projects</h3>
+        <button class="main w-25" routerLink="add">
+            <span>
+                <i class="fa-solid fa-plus"></i>
+            </span>
+            <span>Add New Project</span>
+        </button>
+    </div>
+
+    <div class="table-container mt-5 mx-5 ">
+        <div class="w-25 px-3">
+            <input type="text" placeholder="Search By Title" class="form-control rounded rounded-5" name="" id="">
+        </div>
+        <table class="table   my-3">
+
+            <thead>
+                <th>Manager Name</th>
+                <th>title</th>
+                <th>description</th>
+                <th>Created At</th>
+                <th>Modification Date</th>
+                <th></th>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of projects;let isEven=even" [class]="isEven?'bg-white':'bg-secondary-subtle'">
+
+                    <td>{{item.manager.userName}}</td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.creationDate|date:'dd/MM/yyy'}}</td>
+                    <td>{{item.modificationDate|date:'dd/MM/yyy'}}</td>
+
+                    <td><button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item>
+                                <mat-icon>view</mat-icon>
+                                <span>view</span>
+                            </button>
+                            <button mat-menu-item>
+                                <mat-icon>voicemail</mat-icon>
+                                <span>Edit</span>
+                            </button>
+                            <button mat-menu-item>
+                                <mat-icon>notifications_off</mat-icon>
+                                <span>Delete</span>
+                            </button>
+                        </mat-menu>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</section>
